@@ -1,0 +1,29 @@
+<h1 class="text-center">Admin list</h1>
+<a href="?page=adminadd" class="btn btn-primary m-1">Add Picture</a>
+<table class="table table-striped">
+    <?php foreach ($pictures as $pic) : ?>
+    <thead>
+    <tr>
+        <th scope="col">Num</th>
+        <th scope="col">Source</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Author</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row"><?= $pic['id'] ?></th>
+            <td><img width="80" src="<?= $pic['src'] ?>" alt="<?= $pic['title'] ?>"></td>
+        </th>
+        <td><?= $pic['title'] ?></td>
+        <td><?= $pic['description'] ?></td>
+        <td><?= $pic['author'] ?></td>
+        <td>
+            <a href="#" class="btn btn-warning m-1">Update </a>
+            <a href="#" class="btn btn-danger m-1">Delete </a>
+        </td>
+    </tr>
+    <?php endforeach ?>
+</table>
